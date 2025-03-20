@@ -42,7 +42,6 @@ public class MatrizGrafica extends JPanel {
                 int coluna = e.getY() / tamanhoCelula;
 
                 Graphs graph = new Graphs(matrizCores);
-                //graph.buildGraph(coluna,linha, new HashSet<>());
                 graph.buildAllGraph();
 
                 if (linha >= 0 && linha < LINHAS && coluna >= 0 && coluna < COLUNAS) {

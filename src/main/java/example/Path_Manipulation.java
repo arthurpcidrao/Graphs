@@ -4,7 +4,6 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class Path_Manipulation {
-    //private String filePath;
     private ArrayList<String> fileLines;
 
     public Path_Manipulation() {

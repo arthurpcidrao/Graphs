@@ -57,19 +57,19 @@ public class Graphs {
                 }
 
 
-                if (i > 0 && j > 0 && matrix[i][j] == matrix[i - 1][j - 1]) { // diagonal superior esquerda
+                if (i > 0 && j > 0 && matrix[i][j] == matrix[i - 1][j - 1]) {
                     addEdge(i*this.cols + j, (i - 1) * this.cols + (j - 1));
                 }
 
-                if (i < this.rows - 1 && j > 0 && matrix[i][j] == matrix[i + 1][j - 1]) { // diagonal inferior esquerda
+                if (i < this.rows - 1 && j > 0 && matrix[i][j] == matrix[i + 1][j - 1]) {
                     addEdge(i*this.cols + j, (i + 1) * this.cols + (j - 1));
                 }
 
-                if (i > 0 && j < this.cols - 1 && matrix[i][j] == matrix[i - 1][j + 1]) { // diagonal superior direita
+                if (i > 0 && j < this.cols - 1 && matrix[i][j] == matrix[i - 1][j + 1]) {
                     addEdge(i*this.cols + j, (i - 1) * this.cols + (j + 1));
                 }
 
-                if (i < this.rows - 1 && j < this.cols - 1 && matrix[i][j] == matrix[i + 1][j + 1]) { // diagonal inferior direita
+                if (i < this.rows - 1 && j < this.cols - 1 && matrix[i][j] == matrix[i + 1][j + 1]) {
                     addEdge(i*this.cols + j, (i + 1) * this.cols + (j + 1));
                 }
             }
@@ -204,10 +204,9 @@ public class Graphs {
         this.matrix[i][j] = color;
         int current = 0;
         while (!queue.isEmpty()) {
-            current = queue.poll();  // pode precisar declarar a variável current aqui
+            current = queue.poll();
             int x = current / cols; // pega o valor inteiro de i*cols + j
             int y = current % cols; // pega o resto da divisão i*cols + j
-            this.matrix[x][y] = color;
 
             for (int neighbor : this.adjacencyList.get(current)) {
                 int nx = neighbor / cols;
